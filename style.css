@@ -1,0 +1,575 @@
+/* =========================================
+   VARIABLES Y CONFIGURACIÓN BASE
+   ========================================= */
+:root {
+    /* Paleta unificada: Bosque Tecnológico */
+    --primary: #0a2e1f;
+    --dark: #081c15;
+    --accent: #52b788;
+    --accent-light: #b7e4c7;
+    --text: #2d3436;
+    --text-light: #d8f3dc;
+    --bg: #fdfaf5;
+    
+    /* Colores de Impacto */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background: var(--bg); 
+    color: var(--text); 
+    overflow-x: hidden; 
+    line-height: 1.6;
+}
+
+/* =========================================
+   NAVEGACIÓN (Premium Flotante)
+   ========================================= */
+.navbar {
+    position: fixed; top: 15px; left: 50%; transform: translateX(-50%);
+    width: 95%; max-width: 1100px; background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px); border-radius: 50px;
+    padding: 12px 25px; z-index: 1000; display: flex;
+    justify-content: space-between; align-items: center;
+    border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.logo { font-family: 'Montserrat'; font-weight: 900; color: var(--primary); text-decoration: none; font-size: 1.4rem; }
+.logo span { color: var(--accent); }
+
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--primary); 
+    font-weight: 700; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    transition: 0.3s;
+}
+.nav-links a:hover { color: var(--accent); }
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero {
+    height: 100vh; 
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000') center/cover;
+    display: flex; align-items: center; justify-content: center; color: white; text-align: center;
+    padding: 0 20px;
+}
+
+.hero-badge { 
+    background: var(--accent); 
+    padding: 8px 25px; 
+    border-radius: 50px; 
+    font-weight: 800; 
+    font-size: 0.75rem; 
+    margin-bottom: 25px; 
+    display: inline-block; 
+}
+
+.text-gradient { 
+    background: linear-gradient(to right, var(--accent-light), var(--accent)); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    font-weight: 900; 
+}
+
+.hero h1 { font-size: clamp(3.4rem, 8vw, 4.2rem); line-height: 1.1; margin-bottom: 20px; font-family: 'Montserrat'; }
+.hero h2 { font-size: clamp(3.4rem, 8vw, 4.2rem); line-height: 1.1; margin-bottom: 20px; font-family: 'Montserrat'; }
+
+.hero p { max-width: 700px; margin: 0 auto; font-size: 1.2rem; opacity: 0.9; }
+
+.hero-btns { display: flex; gap: 15px; justify-content: center; margin-top: 35px; }
+
+.btn-main { background: var(--accent); color: white; padding: 16px 38px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; box-shadow: 0 10px 20px rgba(82, 183, 136, 0.3); }
+.btn-outline { border: 2px solid white; color: white; padding: 16px 38px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+.btn-main:hover { transform: scale(1.05); background: #40916c; }
+
+/* =========================================
+   SECCIONES Y GRIDS
+   ========================================= */
+.section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
+.section-title { font-size: 4rem; color: var(--primary); margin-bottom: 30px; font-family: 'Montserrat'; }
+.pre-title { color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 10px; }
+
+
+/* Tarjetas de Proceso (Steps) */
+
+/* =========================================
+   DASHBOARD CIENTÍFICO (Dark Section)
+   ========================================= */
+.bg-dark-organic { 
+    background: linear-gradient(135deg, #081c15 0%, #1b4332 100%); 
+    color: white; 
+    padding: 100px 50px; 
+    margin-top: 50px;
+}
+
+.text-white { color: white !important; font-family: 'Montserrat'; }
+
+.stat-item { 
+    margin-bottom: 40px; 
+    border-left: 4px solid var(--accent); 
+    padding-left: 25px; 
+}
+.stat-item h4 { font-size: 3rem; color: var(--accent-light); font-weight: 800; }
+.stat-item span { font-size: 1rem; opacity: 0.8; font-weight: 600; }
+
+.canvas-holder { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); margin-top: 20px; }
+
+/* =========================================
+   FOOTER Y UTILS
+   ========================================= */
+.footer-premium { background: #05130d; color: #888; padding: 80px 20px 40px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); max-width: 1200px; margin: 0 auto; gap: 60px; }
+.logo-white { font-family: 'Montserrat'; font-weight: 900; color: white; text-decoration: none; font-size: 1.8rem; }
+.logo-white span { color: var(--accent); }
+.team-member { color: white; font-weight: 700; margin-top: 10px; }
+
+.img-impact { width: 100%; border-radius: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+    height: 320px;
+}
+
+
+.pulse { animation: pulse 2s infinite; }
+@keyframes pulse { 
+    0% { box-shadow: 0 0 0 0 rgba(82, 183, 136, 0.7); } 
+    70% { box-shadow: 0 0 0 15px rgba(82, 183, 136, 0); } 
+    100% { box-shadow: 0 0 0 0 rgba(82, 183, 136, 0); } 
+}
+
+@media (max-width: 768px) {
+    .navbar { width: 90%; padding: 10px 15px; }
+    .nav-links { display: none; } /* Podrías agregar un menú hamburguesa luego */
+    .section { padding: 60px 20px; }
+    .bg-dark-organic { padding: 60px 20px; }
+}
+
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background: var(--bg); 
+    color: #2d3436; 
+    overflow-x: hidden; 
+}
+
+/* Navbar Moderna */
+.navbar {
+    position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+    width: 90%; max-width: 1200px; background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px); border-radius: 100px;
+    padding: 15px 40px; z-index: 1000; display: flex;
+    justify-content: space-between; align-items: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.logo { font-family: 'Montserrat'; font-weight: 900; color: var(--primary); text-decoration: none; font-size: 1.5rem; letter-spacing: -1px; }
+.logo span { color: var(--accent); }
+
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 0.85rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-special { background: var(--primary); color: white !important; padding: 8px 18px; border-radius: 50px; }
+
+/* Hero Section */
+.hero {
+    height: 100vh; min-height: 700px;
+    background: linear-gradient(rgba(10, 46, 31, 0.7), rgba(5, 19, 13, 0.8)), 
+                url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000') center/cover;
+    display: flex; align-items: center; justify-content: center; color: white; text-align: center;
+}
+
+.text-gradient { 
+    background: linear-gradient(to right, #b7e4c7, #52b788); 
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* Cards & Grid */
+.section { padding: 120px 5%; max-width: 1400px; margin: 0 auto; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+
+.bg-dark-organic { 
+    background: #081c15; border-radius: 0; color: white; margin: 0; width: 100%; max-width: 100%; 
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px;
+    transition: 0.3s;
+}
+.stat-card h4 { font-size: 2.5rem; color: var(--accent); }
+
+/* Responsive */
+@media (max-width: 968px) {
+    .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+
+}
+
+/* Timeline / Pasos */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 40px;
+}
+
+.step-card, .step {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.step-num, .step span { 
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: var(--accent);
+    color: white;
+    line-height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   DASHBOARD / SECCIÓN OSCURA
+   ========================================= */
+.bg-dark-organic { 
+    background: linear-gradient(135deg, #081c15 0%, #1b4332 100%); 
+    color: white; 
+    padding: 100px 5%; 
+    width: 100%;
+}
+
+
+.canvas-holder { 
+    background: rgba(255,255,255,0.03); 
+    padding: 20px; 
+    border-radius: 20px; 
+    border: 1px solid rgba(255,255,255,0.1); 
+}
+
+#proceso{ 
+    padding: 65px 5%;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    margin-bottom: 65px;
+}
+
+.section-title { 
+    font-size: 2.5rem; 
+    color: var(--primary); 
+    margin-bottom: 30px; 
+    font-family: 'Montserrat'; 
+    text-align: center;
+}
+
+.pre-title { 
+    color: var(--accent); 
+    font-weight: 800; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    font-size: 0.9rem; 
+    display: block; 
+    margin-bottom: 10px; 
+    text-align: center;
+}
+
+
+
+
+
+/* Tarjetas y Contenedores Especiales */
+.bg-soft { background: #f4f7f4; border-radius: 60px; }
+.bg-light { background-color: #f9f9f9; }
+
+/* Tarjetas de Impacto (Categorías de colores) */
+ .steam-card { 
+    background: white; 
+    border-radius: 30px; 
+    overflow: hidden; 
+    border: 1px solid #eee; 
+    transition: 0.4s; 
+    height: 100%; 
+    border-bottom: 5px solid var(--accent);
+}
+ .steam-card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05); 
+}
+
+.bg-air { background: var(--air); color: #2d3436; }
+.bg-ocean { background: var(--ocean); }
+.bg-waste { background: var(--waste); }
+.bg-climate { background: var(--climate); }
+
+.card-content { padding: 25px; }
+
+
+.section { 
+    position: relative; 
+    background: transparent; /* Asegúrate de que las secciones no tapen el fondo */
+    z-index: 1;
+    margin-bottom: 50px; 
+}
+
+/* Solo las secciones que tienen bg-soft o bg-dark-organic deben tener color */
+.bg-soft { background: rgba(244, 247, 244, 0.9); } /* Un poco de transparencia */
+.bg-dark-organic { background: linear-gradient(135deg, rgba(8, 28, 21, 0.98), rgba(27, 67, 50, 0.98)); }
+
+#mision{
+    margin-bottom: 65px;
+}
+
+/* Estilo base */
+.watermark-side {
+    position: fixed;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 8vw;
+    color: var(--primary);
+    opacity: 0.08; /* Un poco más visible ya que se mueve */
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 10;
+    writing-mode: vertical-rl;
+}
+
+/* --- Animación Izquierda (Sube) --- */
+.watermark-side.left {
+    left: 1vw;
+    transform: rotate(180deg);
+    /* Duración total: 8s de movimiento + 4s de espera = 12s */
+    animation: moveUpInfinite 12s linear infinite;
+}
+
+@keyframes moveUpInfinite {
+    0% { top: 110%; }      /* Empieza abajo, fuera de vista */
+    66% { top: -110%; }    /* Sube hasta salir por arriba (aprox 8 seg) */
+    100% { top: -110%; }   /* Se queda arriba (los 4 seg restantes) */
+}
+
+/* --- Animación Derecha (Baja) --- */
+.watermark-side.right {
+    right: 1vw;
+    /* Duración total: 12s. Usamos un delay inicial para que no salgan al mismo tiempo si quieres */
+    animation: moveDownInfinite 12s linear infinite;
+}
+
+@keyframes moveDownInfinite {
+    0% { top: -110%; }     /* Empieza arriba, fuera de vista */
+    66% { top: 110%; }     /* Baja hasta salir por abajo */
+    100% { top: 110%; }    /* Se queda abajo (los 4 seg restantes) */
+}
+
+/* Ajuste para móviles: mejor esconderlos para no entorpecer el scroll táctil */
+@media (max-width: 1024px) {
+    .watermark-side { display: none; }
+}
+
+.watermark-side.left {
+
+    -webkit-text-stroke: 1px var(--primary); 
+    color: var(--dark); 
+}
+.watermark-side.right{
+  
+    -webkit-text-stroke: 1px var(--primary); 
+    color: var(--bg); 
+}
+
+#whitee {
+    -webkit-text-stroke: 1px var(--white); 
+    color: var(--accent); 
+}
+
+#blacky {
+    -webkit-text-stroke: 1px var(--dark); 
+    color: var(--accent); 
+}
+
+/* =========================================
+   📱 MENÚ MÓVIL ECO
+   ========================================= */
+
+@media (max-width: 858px) {
+
+    .checkbtn {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 95px;
+        left: -105%;
+        width: 100%;
+        height: calc(100vh - 95px);
+
+        background: linear-gradient(
+            180deg,
+            var(--green-dark),
+            #051f16
+        );
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 42px;
+        transition: left 0.45s ease;
+    }
+
+    .nav-links a {
+        font-size: 1.4rem;
+        color: var(--green-soft);
+    }
+
+    .nav-links a::after {
+        background: var(--green-soft);
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .pasos-section {
+        flex-direction: column;
+    }
+}
+
+.checkbtn {
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--green-main);
+    display: none;
+    transition: transform 0.3s ease;
+}
+
+.checkbtn:hover {
+    transform: scale(1.1);
+}
+
+#check { display: none; }
+
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--green-main);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Línea orgánica */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: var(--green-accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--green-dark);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ================================
+   NAVBAR + MENÚ HAMBURGUESA FIX
+   ================================ */
+
+/* Botón hamburguesa */
+.checkbtn {
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--primary);
+    display: none;
+    z-index: 1100;
+}
+
+#check {
+    display: none;
+}
+
+/* Links desktop */
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+/* ================================
+   📱 MOBILE
+   ================================ */
+@media (max-width: 858px) {
+
+    /* Mostrar botón */
+    .checkbtn {
+        display: block;
+    }
+
+    /* Menú oculto por defecto */
+    .nav-links {
+        position: fixed;
+        top: 95px;
+        left: -105%;
+        width: 100%;
+        height: calc(100vh - 95px);
+
+        background: linear-gradient(
+            180deg,
+            var(--primary),
+            #051f16
+        );
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 40px;
+        transition: left 0.4s ease;
+        z-index: 1000;
+    }
+
+    .nav-links a {
+        color: white;
+        font-size: 1.4rem;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    /* 🔥 ACTIVACIÓN REAL (JS AGREGA ESTA CLASE) */
+    .nav-links.active {
+        left: 0;
+    }
+}
+
