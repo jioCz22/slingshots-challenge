@@ -319,13 +319,11 @@ section{
         gap: 36px;
         transition: left 0.4s ease;
         z-index: 999;
-        
-        
     }
 
     /* 🔑 ESTE ES EL FIX */
     #check:checked {
-        left: 0px;
+        left: 0;
     }
 
     .nav-links a {
