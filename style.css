@@ -367,7 +367,7 @@ body {
 /* --- Animación Derecha (Baja) --- */
 .watermark-side.right {
     right: 1vw;
-    transform: rotate(180deg);
+    transform: rotate(0deg);
 
     /* Duración total: 12s. Usamos un delay inicial para que no salgan al mismo tiempo si quieres */
     animation: moveDownInfinite 12s linear infinite;
