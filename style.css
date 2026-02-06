@@ -388,14 +388,14 @@ body {
 
     -webkit-text-stroke: 1px var(--primary); 
     color: var(--dark); 
-    transform: rotate(180deg);
+
 
 }
 .watermark-side.right{
   
     -webkit-text-stroke: 1px var(--primary); 
     color: var(--bg); 
-    transform: rotate(180deg);
+
 
 }
 
