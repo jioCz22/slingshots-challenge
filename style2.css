@@ -325,7 +325,7 @@ section{
 
     /* 🔑 ESTE ES EL FIX */
     #check:checked {
-        left: 0;
+        left: 0px;
     }
 
     .nav-links a {
