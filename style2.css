@@ -322,7 +322,7 @@ section{
     }
 
     /* 🔑 ESTE ES EL FIX */
-    #check:checked {
+    #check:checked ~ .nav-links {
         left: 0;
     }
 
