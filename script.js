@@ -132,7 +132,7 @@ window.addEventListener('scroll', () => {
     const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
     
     leftMark.style.transform = `translateY(${scrollPercent * 50}px)`;
-    rightMark.style.transform = `translateY(-${scrollPercent * 50}px)`;
+    rightMark.style.transform = `translateY(-${scrollPercent * -50}px)`;
 });
 
 
