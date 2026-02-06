@@ -353,7 +353,7 @@ body {
 /* --- Animación Izquierda (Sube) --- */
 .watermark-side.left {
     left: 1vw;
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
     /* Duración total: 8s de movimiento + 4s de espera = 12s */
     animation: moveUpInfinite 12s linear infinite;
 }
@@ -367,6 +367,8 @@ body {
 /* --- Animación Derecha (Baja) --- */
 .watermark-side.right {
     right: 1vw;
+    transform: rotate(180deg);
+
     /* Duración total: 12s. Usamos un delay inicial para que no salgan al mismo tiempo si quieres */
     animation: moveDownInfinite 12s linear infinite;
 }
@@ -386,11 +388,15 @@ body {
 
     -webkit-text-stroke: 1px var(--primary); 
     color: var(--dark); 
+    transform: rotate(-180deg);
+
 }
 .watermark-side.right{
   
     -webkit-text-stroke: 1px var(--primary); 
     color: var(--bg); 
+    transform: rotate(0deg);
+
 }
 
 #whitee {
