@@ -330,3 +330,77 @@ section{
 .footer-premium{
     background: var(--green-dark);
 }
+
+/* ================================
+   📊 TABLA COMPARATIVA BIOFOMENT
+   ================================ */
+
+.table-container {
+    overflow-x: auto; /* móvil */
+    margin-top: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate; /* 🔑 permite separación */
+    border-spacing: 0;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(10, 46, 31, 0.08);
+}
+
+/* CABECERA */
+thead th {
+    padding: 16px 20px;
+    background: var(--green-main);
+    color: white;
+    text-align: left;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* CUERPO */
+tbody td {
+    padding: 18px 20px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    vertical-align: top;
+}
+
+/* LÍNEAS HORIZONTALES */
+tbody tr:not(:last-child) td {
+    border-bottom: 1px solid rgba(45, 106, 79, 0.15);
+}
+
+/* LÍNEAS VERTICALES */
+thead th:not(:last-child),
+tbody td:not(:last-child) {
+    border-right: 1px solid rgba(45, 106, 79, 0.15);
+}
+
+/* FILAS INTERCALADAS (lectura más fácil) */
+tbody tr:nth-child(even) {
+    background: #f4f9f6;
+}
+
+/* DESTACAR COLUMNA ECO-BIOFOMENT */
+thead th:last-child {
+    background: var(--green-dark);
+}
+
+tbody td:last-child {
+    background: rgba(82, 183, 136, 0.08);
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9rem;
+    }
+
+    thead th,
+    tbody td {
+        padding: 14px 16px;
+    }
+}
