@@ -584,7 +584,7 @@ body {
     }
 }
 
-#nombre{
+.nombre{
     color: white; font-weight: 700; margin-top: 10px;
     text-decoration: none;
 }
