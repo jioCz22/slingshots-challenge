@@ -588,3 +588,27 @@ body {
     color: white; font-weight: 700; margin-top: 10px;
     text-decoration: none;
 }
+
+
+
+@media (max-width: 768px) {
+    body {
+        padding-bottom: env(safe-area-inset-bottom);
+
+    }
+     .section {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+}
+
+.hero
+{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.footer-premium{
+    background: #05130d;
+    color: #888;
+    padding: 80px 20px 40px;
+}
