@@ -95,20 +95,14 @@ function initMobileMenu() {
 
     if (!checkbox || !navLinks || !icon) return;
 
-    // Cambiar ícono cuando se abre / cierra
     checkbox.addEventListener('change', () => {
-        if (checkbox.checked) {
-            navLinks.classList.add('active');
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            navLinks.classList.remove('active');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
-        }
+        const isOpen = checkbox.checked;
+
+        navLinks.classList.toggle('active', isOpen);
+        icon.classList.toggle('fa-bars', !isOpen);
+        icon.classList.toggle('fa-times', isOpen);
     });
 
-    // Cerrar menú al hacer click en un link
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             checkbox.checked = false;
@@ -118,6 +112,7 @@ function initMobileMenu() {
         });
     });
 }
+
 
 
 /* --- Eventos Globales --- */

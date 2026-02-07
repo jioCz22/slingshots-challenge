@@ -284,12 +284,17 @@ section{
    📱 MENÚ MÓVIL RESPONSIVO REAL
    ================================ */
 @media (max-width: 858px) {
+
+    .checkbtn {
+        display: block; /* 🔑 AHORA SÍ APARECE */
+    }
+
     .nav-links {
         position: fixed;
         top: 100px;
-        left: -105%;
+        left: 0;
         width: 100%;
-        height: 100vh;
+        height: calc(100vh - 100px);
 
         background: linear-gradient(
             180deg,
@@ -303,14 +308,23 @@ section{
         align-items: center;
 
         gap: 36px;
-        transition: left 0.4s ease;
-        z-index: 999;
+
+        transform: translateX(-105%);
+        transition: transform 0.4s ease;
+
+        z-index: 2000; /* 🔑 MÁS ALTO QUE LA NAVBAR */
     }
 
     .nav-links.active {
-        left: 0;
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+        color: var(--green-soft);
     }
 }
+
 
 
 .footer-premium{
