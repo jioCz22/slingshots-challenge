@@ -404,3 +404,9 @@ tbody td:last-child {
         padding: 14px 16px;
     }
 }
+
+
+.team-member {
+    color: white; font-weight: 700; margin-top: 10px;
+    text-decoration: none;
+}
