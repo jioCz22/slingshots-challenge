@@ -207,20 +207,28 @@ a { text-decoration: none; color: inherit; }
 }
 
 .column-materials {
-    background: #e9f5e8;
+    background: #E8F5E9;
+    border-left: 6px solid #4CAF50;
 }
 
 .column-materials2 {
-    background: #efe5d8;
+    background: #E1F5FE;
+    border-left: 6px solid #0277BD;
 }
 
 .column-materials-tela {
-    background: var(--water);
+    background:#FFF3E0;
+    border-left: 6px solid #FB8C00;
+}
+.column-materials-composta{
+    background: #EFEBE9;
+    border-left: 6px solid #6D4C41;
 }
 
 .column-materials,
 .column-materials2,
-.column-materials-tela {
+.column-materials-tela,
+.column-materials-composta {
     flex: 1;
     padding: 22px;
     border-radius: 16px;
@@ -233,51 +241,91 @@ a { text-decoration: none; color: inherit; }
 section{
     padding-left: 10px;
 }
+
 /* ================================
-   🌱 FOOTER RESPONSIVO
+   FOOTER PREMIUM 3 COLUMNAS
    ================================ */
 
 .footer-grid {
     max-width: 1100px;
     margin: auto;
-
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr 1fr; /* ahora 3 columnas */
     gap: 40px;
     color: white;
-
     text-align: left;
 }
 
+/* Bloques internos */
+.footer-brand,
+.footer-links,
+.footer-team {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Logo */
 .logo-white {
     font-family: 'Montserrat';
     font-weight: 900;
     font-size: 1.6rem;
-    color: rgb(255, 255, 255);
+    color: #fff;
 }
 
 .logo-white span {
     color: var(--green-accent);
 }
 
-/* 📱 MÓVIL */
+/* Enlaces de fuentes */
+.footer-links a {
+    font-size: 0.95rem;
+    color: var(--green-soft);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--green-accent);
+    text-decoration: underline;
+}
+
+/* Equipo */
+.footer-team h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.footer-team .team-member a {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-team .team-member a:hover {
+    color: var(--green-accent);
+}
+
+.footer-year {
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+/* Móvil */
 @media (max-width: 768px) {
-
-    .footer-premium {
-        padding: 50px 20px;
-    }
-
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 30px;
     }
-
-    .footer-grid p {
+    .footer-links a,
+    .footer-team .team-member a {
         font-size: 0.95rem;
-        line-height: 1.6;
     }
 }
+
 
 
 /* ================================
@@ -429,4 +477,122 @@ tbody td:last-child {
 .footer-premium {
     padding-left: 0 !important;
     padding-right: 0 !important;
+}
+
+
+
+
+/* =========================================
+   SECCIÓN FUENTES / BIBLIOGRAFÍA
+   ========================================= */
+
+.research-section.sources {
+    background: #f4f9f6; /* fondo suave */
+    padding: 60px 20px;
+    border-radius: 16px;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+.research-section.sources h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: var(--green-dark);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.research-section.sources p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.bibliography-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.bibliography-list li {
+    background: #ffffff;
+    border-left: 6px solid var(--green-accent);
+    padding: 20px 18px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(10,46,31,0.08);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.bibliography-list li strong {
+    color: var(--green-dark);
+}
+
+.bibliography-list li em {
+    font-style: italic;
+    color: var(--green-main);
+}
+
+.bibliography-list li a {
+    color: var(--green-accent);
+    text-decoration: underline;
+}
+
+.bibliography-list li a:hover {
+    color: var(--green-dark);
+}
+
+@media (max-width: 768px) {
+    .research-section.sources h2 {
+        font-size: 1.7rem;
+    }
+    .bibliography-list li {
+        padding: 16px;
+    }
+}
+.accordion {
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.accordion-item {
+    border-left: 6px solid var(--green-main);
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.accordion-title {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: left;
+    border: none;
+    background: var(--green-soft);
+    color: var(--green-dark);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.accordion-title:hover {
+    background: var(--green-accent);
+    color: #fff;
+}
+
+.accordion-content {
+    padding: 0 24px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    background: #f4f9f6;
+}
+
+.accordion-content p {
+    padding: 12px 0;
+    font-size: 0.95rem;
+    color: var(--text-dark);
 }

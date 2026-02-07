@@ -131,3 +131,30 @@ window.addEventListener('scroll', () => {
 });
 
 
+const accordionTitles = document.querySelectorAll('.accordion-title');
+
+accordionTitles.forEach(title => {
+    title.addEventListener('click', () => {
+        const content = title.nextElementSibling;
+
+        // Cerrar otros acordeones
+        document.querySelectorAll('.accordion-content').forEach(c => {
+            if (c !== content) {
+                c.style.maxHeight = null;
+                c.style.paddingTop = '0';
+                c.style.paddingBottom = '0';
+            }
+        });
+
+        // Alternar el acordeón clickeado
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            content.style.paddingTop = '0';
+            content.style.paddingBottom = '0';
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.paddingTop = "12px";
+            content.style.paddingBottom = "12px";
+        }
+    });
+});
